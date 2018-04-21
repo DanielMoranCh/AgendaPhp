@@ -80,17 +80,13 @@ class ConectorBD
 	function consultar($tablas, $campos, $condicion = ""){
 		$sql = "SELECT 1";
 
-		//$ultima_key = end(array_keys($campos));
-		//echo $ultima_key;
-		foreach ($campos as $key => $value) {
-			//echo ($key);
-		//	$sql .= $value;
-		//	if ($key!=$ultima_key) {
+	foreach ($campos as $key => $value) {
+
 				$sql.=", ".$value;
-		//	}else $sql .=" FROM ";
+
 		}
     $sql .=" FROM ";
-		//$ultima_key = end(array_keys($tablas));
+	
 		$num_tab = count($tablas);
 		$i=1;
 		foreach ($tablas as $key => $value) {

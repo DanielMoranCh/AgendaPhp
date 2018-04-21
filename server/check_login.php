@@ -4,10 +4,15 @@
     require('./bdd.php');
 
 if(isset($_POST['user']))
-  $usuario = 'carmenw54321@gmail.com';
+  $usuario = $_POST['user'];
+else {
+  $usuario = '';
+}
 
 if(isset($_POST['password']))
-  $pass = '54321';
+  $pass = $_POST['password'];
+else
+  $pass = '';
 
   $con = new ConectorBD('localhost','root','');
 
@@ -29,7 +34,7 @@ if(isset($_POST['password']))
         $response['acceso'] = 'rechazado';
       }
     }else{
-      $response['motivo'] = 'Email incorrecto';
+      $response['motivo'] = 'email incorrecto';
       $response['acceso'] = 'rechazado';
     }
   }
