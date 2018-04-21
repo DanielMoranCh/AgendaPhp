@@ -3,8 +3,7 @@
 // List of events
  $json = array();
  session_start();
-// $_SESSION['usuarioid']=2;
- // Query that retrieves events
+
  $requete = "SELECT id, titulo as title, TIMESTAMP(start_date, start_hour) as start, TIMESTAMP(end_date, end_hour) as end FROM evento WHERE usuarioid = ".$_SESSION['usuarioid']." ORDER BY id";
 
  // connection to the database

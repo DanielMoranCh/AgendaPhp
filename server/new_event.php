@@ -15,14 +15,14 @@ if($_POST['allDay']==true){
 }else{
   $allDay = 0;
 }
-  // connection to the database
+  // conexion a la bdd
   try {
   $bdd = new PDO('mysql:host=localhost;dbname=agenda_db', 'root', '');
   } catch(Exception $e) {
    exit('Unable to connect to database.');
   }
 
-// insert the records
+//inserta registros
 if(strlen($date)!=0 && strlen($title)!=0)
 {
     $sql = "INSERT INTO evento (usuarioid, titulo, start_date, end_date, start_hour, end_hour, allDay) VALUES (".$_SESSION['usuarioid'].",'".$title."','".$date."','".$edate."','".$start."','".$end."',".$allDay.")";

@@ -8,13 +8,13 @@ $edate = $_POST['end_date'];
 $start = $_POST['start_hour'];
 $end = $_POST['end_hour'];
 
-// connection to the database
+// conexion a la bdd
 try {
  $bdd = new PDO('mysql:host=localhost;dbname=agenda_db', 'root', '');
- } catch(Exception $e) { 
+ } catch(Exception $e) {
 exit('Unable to connect to database.');
 }
- // update the records
+ // actualiza registros
  if(strlen($id)!=0)
  {
    $sql = "UPDATE evento SET start_date='".$date."' , end_date='".$edate."' , start_hour='".$start."' , end_hour='".$end."'  WHERE id=".$id;

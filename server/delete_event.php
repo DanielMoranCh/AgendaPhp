@@ -3,14 +3,16 @@
 session_start();
 // Values received via ajax
 $id = $_POST['id'];
-// connection to the database
+
+
+//conexiona la bdd
 try {
  $bdd = new PDO('mysql:host=localhost;dbname=agenda_db', 'root', '');
  } catch(Exception $e) {
 exit('Unable to connect to database.');
 }
 
-  // delete the records
+  // elimina regisros
 if(strlen($id)!=0)
 {
     $sql = "DELETE FROM evento WHERE id=".$id;
